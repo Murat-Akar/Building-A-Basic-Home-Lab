@@ -1,56 +1,47 @@
 # Building-A-Basic-Home-Lab
 💡 What's a Home Lab?: Think of it as your digital workshop, a safe haven to tinker, test, and refine your cybersecurity skills. A Home Lab is a personalized setup where you can build virtual environments, play with cutting-edge tools, and simulate real-world scenarios, all from the comfort of your home. 🏠💡
 
-Why Build a Home Lab?
-In the realm of cybersecurity, practical hands-on experience is invaluable. A Home Lab allows you to:
+## Getting Started with Your Home Lab Setup
+**1. Choosing the Right Virtualization Software**
+Before you start building your lab, you'll need to select a virtualization platform. VirtualBox is a free and versatile option, perfect for beginners and professionals alike. It allows you to create multiple isolated VMs on a single physical machine.
 
-Experiment safely without the risk of harming real-world systems.
-Learn and practice with tools and technologies that are used by cybersecurity professionals.
-Test security measures and offensive techniques in a controlled environment.
-Getting Started
-1. Choosing the Right Virtualization Software
-Before diving into the setup, you'll need to select virtualization software. This software is critical as it allows you to run multiple operating systems simultaneously on your host machine. For this guide, we'll use VirtualBox, which is free and versatile.
+**2. Downloading and Installing VirtualBox**
+- Navigate to VirtualBox.org and download the version compatible with your operating system.
+- Follow the installation prompts. If a dependency such as Microsoft Visual C++ 2019 is missing, the installer will guide you to download and install the necessary components.
 
-Screenshot: Place a screenshot here showing the VirtualBox download page or initial setup screen.
+**Screenshot:** Download both the appropriate VirtualBox Platform Packages and Extension Pack.
+<img width="955" alt="image" src="https://github.com/user-attachments/assets/961dbc50-0fee-4152-9b28-3dff3fc5f775" />
 
-2. Downloading VirtualBox
-Visit the VirtualBox website and download the version suitable for your operating system.
-Ensure the integrity of the download by verifying the SHA-256 checksum.
-Screenshot: Include a screenshot of the checksum verification process, possibly in a terminal or command prompt window.
+**3. Setting Up Your First Virtual Machine (VM)**
+Once VirtualBox is installed, it's time to set up your first VM:
 
-3. Installing VirtualBox
-Open the downloaded installer and follow the prompts. If required, install any dependencies like Microsoft Visual C++.
-Complete the installation and launch VirtualBox.
-Screenshot: A capture of the installation steps could be helpful here, showing key moments like accepting the license or choosing installation options.
+- Open VirtualBox and click 'New'.
+- Name your VM and select the type of operating system you plan to install, such as Windows 10.
+- Allocate resources such as RAM and CPU cores according to your hardware capabilities.
+Screenshot: Insert a screenshot of the VM creation window with the fields filled out.
 
-Setting Up Your First Virtual Machine (VM)
-1. Creating a Windows 10 VM
-Use the Media Creation Tool from Microsoft to download a Windows 10 ISO. Remember, you'll need a valid license.
-In VirtualBox, create a new VM, name it, and allocate it appropriate resources like memory and disk space.
-Screenshot: Show the VirtualBox interface with the "Create VM" dialog filled out.
+**4. Installing the Operating System**
+- Download the Windows 10 ISO using the Media Creation Tool from Microsoft’s official website.
+- Start the VM and select the downloaded ISO file as the startup disk.
+- Follow the on-screen instructions to install Windows 10.
+Screenshot: A screenshot showing the ISO selection in VirtualBox and the initial setup screen of Windows 10 would be helpful here.
 
-2. Installing Windows 10 on the VM
-Mount the Windows 10 ISO to the newly created VM and follow the on-screen instructions to install Windows.
-Once installed, configure the OS settings according to your preference.
-Screenshot: Insert a screenshot of the Windows setup screen, perhaps at a key moment like partition setup or the final installation phase.
+**5. Configuring Network Settings**
+To ensure that your lab environment is isolated and safe:
+- Change the network setting from NAT to Internal Network. This setting prevents the VMs from communicating with your main network, reducing the risk of accidental malware escape.
+Screenshot: Display the network settings tab in VirtualBox where the user changes the setting to Internal Network.
 
-3. Creating a Kali Linux VM
-Download the Kali Linux VM image from the official Kali website.
-Import the VM into VirtualBox and start it up using the default credentials provided by Kali.
-Screenshot: You could show the import process in VirtualBox or the Kali Linux login screen.
+**6. Installing and Configuring Kali Linux**
+- For offensive security practices, download and set up a Kali Linux VM.
+- Use the pre-built Kali Linux VM available on their official site for ease of installation.
+Screenshot: Include screenshots of the process of downloading Kali Linux and setting it up in VirtualBox.
 
-Ensuring Safe Practice
-Network Configuration
-Configure VM network settings to isolate them from your main network. This can prevent any malicious software from affecting your real environment.
-Screenshot: Display the network settings configuration in VirtualBox.
+##Best Practices and Tips
+- Take Snapshots: Always take snapshots of your VMs before running any experiments. This step allows you to revert to a clean state if anything goes wrong.
+- Monitor System Resources: Keep an eye on your system’s resource usage to avoid overloading your host machine.
+Screenshot: Show how to take a snapshot in VirtualBox.
 
-Taking Snapshots
-Before experimenting with potentially dangerous software, take snapshots of your VMs. This allows you to revert to a safe state if something goes wrong.
-Screenshot: Show the snapshot management window in VirtualBox.
+##Final Thoughts
+Your Home Lab is more than just a learning tool; it's a platform to push your cybersecurity skills to new heights, offering endless possibilities for growth and experimentation. Whether you're a seasoned professional or just starting out, the insights and hands-on experience gained from a Home Lab are invaluable.
 
-Learning and Experimentation
-Use your Home Lab to run security scans, practice penetration tests, and simulate attacks between the VMs. Monitor and analyze the impacts using tools installed on your VMs.
-Screenshot: Perhaps show a security scan in progress or the interface of a monitoring tool like Splunk.
-
-Conclusion
-Building a Home Lab is a rewarding endeavor that enhances your cybersecurity skills through real-world simulations and safe experimentation. With your lab set up, the possibilities for learning and growth are nearly limitless.
+Screenshot: A final screenshot of the running VMs in VirtualBox could serve as a good conclusion to your guide.
