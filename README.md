@@ -5,36 +5,63 @@
 **1. Choosing the Right Virtualization Software**
 Before you start building your lab, you'll need to select a virtualization platform. VirtualBox is a free and versatile option, perfect for beginners and professionals alike. It allows you to create multiple isolated VMs on a single physical machine.
 
+
 **2. Downloading and Installing VirtualBox**
 - Navigate to VirtualBox.org and download the version compatible with your operating system.
 - Follow the installation prompts. If a dependency such as Microsoft Visual C++ 2019 is missing, the installer will guide you to download and install the necessary components.
+- Download both the appropriate VirtualBox Platform Packages and Extension Pack.
 
-**Screenshot:** Download both the appropriate VirtualBox Platform Packages and Extension Pack.
 <img width="955" alt="image" src="https://github.com/user-attachments/assets/961dbc50-0fee-4152-9b28-3dff3fc5f775" />
 
-**3. Setting Up Your First Virtual Machine (VM)**
+
+**3. Downloading and Installing Windows 10**
+- Go to the Microsoft Website where there is a link for downloading Windows 10
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/730d637d-5943-4461-9841-031d6350d8e6" />
+
+
+**4. Setting Up Your First Virtual Machine (VM)**
 Once VirtualBox is installed, it's time to set up your first VM:
 
 - Open VirtualBox and click 'New'.
 - Name your VM and select the type of operating system you plan to install, such as Windows 10.
+- Choose the downloaded Windows.iso for the "ISO Image" section.
 - Allocate resources such as RAM and CPU cores according to your hardware capabilities.
-Screenshot: Insert a screenshot of the VM creation window with the fields filled out.
+<img width="512" alt="image" src="https://github.com/user-attachments/assets/02c0f3de-ec75-49ce-805a-dbbf93167f87" />
+<img width="511" alt="image" src="https://github.com/user-attachments/assets/30caac94-02bf-4ee8-9fb9-88112a6cfca6" />
 
-**4. Installing the Operating System**
-- Download the Windows 10 ISO using the Media Creation Tool from Microsoft’s official website.
-- Start the VM and select the downloaded ISO file as the startup disk.
-- Follow the on-screen instructions to install Windows 10.
-Screenshot: A screenshot showing the ISO selection in VirtualBox and the initial setup screen of Windows 10 would be helpful here.
-
-**5. Configuring Network Settings**
-To ensure that your lab environment is isolated and safe:
-- Change the network setting from NAT to Internal Network. This setting prevents the VMs from communicating with your main network, reducing the risk of accidental malware escape.
-Screenshot: Display the network settings tab in VirtualBox where the user changes the setting to Internal Network.
-
-**6. Installing and Configuring Kali Linux**
+**5. Installing and Configuring Kali Linux**
 - For offensive security practices, download and set up a Kali Linux VM.
 - Use the pre-built Kali Linux VM available on their official site for ease of installation.
-Screenshot: Include screenshots of the process of downloading Kali Linux and setting it up in VirtualBox.
+- After downloading, click the linux file ended with ".vbox" extension.
+- This will automatically create a virtual machine in the virtualbox dashboard.
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/c6b8b7cd-6e82-4e8e-b2e1-e2ae37d49306" />
+<img width="512" alt="image" src="https://github.com/user-attachments/assets/e4462b34-19c0-4923-8912-c13d0415ac1e" />
+
+
+##Proper VM Network Configuration
+To ensure safe testing environments, especially when handling malware or testing security tools, proper network configuration is crucial. Here’s how to set up your VM network settings to minimize risks:
+
+**VirtualBox Network Settings**
+- Open VirtualBox, select your VM, and go to 'Settings' -> 'Network'.
+- You’ll see various network options. Here’s how to use them:
+  - NAT: Use when internet access is needed without exposing your real network.
+  - Internal Network: Best for malware analysis; VMs can communicate with each other but not with the outside world.
+  - Host-only Network: Allows network communication between host and VMs, but not to the internet.
+  - Not Attached: Disconnects the VM from all networks, providing maximum security during high-risk testing.
+Scenario-Based Network Configuration
+Scenario 1: Testing Tools with Internet Access
+Use the NAT setting. It provides Internet access and isolates your VM from the host's main network.
+Scenario 2: Analyzing Malware
+Set the network to 'Internal' or 'Not Attached' to prevent any external communications. This isolates your VMs entirely, providing a secure environment for analyzing harmful software.
+Implementing Network Changes
+For malware analysis, change the network setting to 'Internal Network'. Create a network name (e.g., 'TestNet'), and configure all VMs to this network.
+Ensure that each VM has a static IP address if using the 'Internal Network' setting, so they can communicate within their isolated network without risk to your main system.
+<!-- hypothetical image link for network settings illustration -->
+
+Final Considerations
+Always use snapshots before running potentially harmful software. This allows you to revert to a safe state if something goes wrong.
+Regularly update your virtualization software and guest OS to protect against vulnerabilities.
+
 
 ##Best Practices and Tips
 - Take Snapshots: Always take snapshots of your VMs before running any experiments. This step allows you to revert to a clean state if anything goes wrong.
