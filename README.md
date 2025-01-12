@@ -38,7 +38,7 @@ Once VirtualBox is installed, it's time to set up your first VM:
 <img width="512" alt="image" src="https://github.com/user-attachments/assets/e4462b34-19c0-4923-8912-c13d0415ac1e" />
 
 
-##Proper VM Network Configuration
+## Proper VM Network Configuration
 To ensure safe testing environments, especially when handling malware or testing security tools, proper network configuration is crucial. Here’s how to set up your VM network settings to minimize risks:
 
 **VirtualBox Network Settings**
@@ -48,27 +48,21 @@ To ensure safe testing environments, especially when handling malware or testing
   - Internal Network: Best for malware analysis; VMs can communicate with each other but not with the outside world.
   - Host-only Network: Allows network communication between host and VMs, but not to the internet.
   - Not Attached: Disconnects the VM from all networks, providing maximum security during high-risk testing.
-Scenario-Based Network Configuration
-Scenario 1: Testing Tools with Internet Access
-Use the NAT setting. It provides Internet access and isolates your VM from the host's main network.
-Scenario 2: Analyzing Malware
-Set the network to 'Internal' or 'Not Attached' to prevent any external communications. This isolates your VMs entirely, providing a secure environment for analyzing harmful software.
-Implementing Network Changes
-For malware analysis, change the network setting to 'Internal Network'. Create a network name (e.g., 'TestNet'), and configure all VMs to this network.
-Ensure that each VM has a static IP address if using the 'Internal Network' setting, so they can communicate within their isolated network without risk to your main system.
-<!-- hypothetical image link for network settings illustration -->
 
-Final Considerations
-Always use snapshots before running potentially harmful software. This allows you to revert to a safe state if something goes wrong.
-Regularly update your virtualization software and guest OS to protect against vulnerabilities.
+## Scenario-Based Network Configuration
+- **Scenario 1: Testing Tools with Internet Access**
+  - Use the NAT setting. It provides Internet access and isolates your VM from the host's main network.
+- **Scenario 2: Analyzing Malware**
+  - Set the network to 'Internal' or 'Not Attached' to prevent any external communications. This isolates your VMs entirely, providing a secure environment for analyzing harmful software.
 
+ 
+**Implementing Network Changes**
+- For malware analysis, change the network setting to 'Internal Network'. Create a network name (e.g., 'TestNet'), and configure all VMs to this network.
+- Ensure that each VM has a static IP address if using the 'Internal Network' setting, so they can communicate within their isolated network without risk to your main system.
 
-##Best Practices and Tips
-- Take Snapshots: Always take snapshots of your VMs before running any experiments. This step allows you to revert to a clean state if anything goes wrong.
-- Monitor System Resources: Keep an eye on your system’s resource usage to avoid overloading your host machine.
-Screenshot: Show how to take a snapshot in VirtualBox.
-
-##Final Thoughts
+## Final Thoughts
 Your Home Lab is more than just a learning tool; it's a platform to push your cybersecurity skills to new heights, offering endless possibilities for growth and experimentation. Whether you're a seasoned professional or just starting out, the insights and hands-on experience gained from a Home Lab are invaluable.
 
-Screenshot: A final screenshot of the running VMs in VirtualBox could serve as a good conclusion to your guide.
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/01dd9019-c9ce-4b69-80ae-09ff57d7050f" />
+
+
